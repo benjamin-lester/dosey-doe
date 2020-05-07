@@ -21,7 +21,7 @@ export default function Footer() {
           })}
         </ul>
         <p className="text-muted small mb-0">
-          Copyright &copy; Gatsby Starter Stylish
+          Copyright &copy; Dosey-Doe
         </p>
       </div>
     </footer>

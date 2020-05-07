@@ -19,9 +19,9 @@ const IndexPage = () => (
 
     <header className="masthead d-flex">
       <div className="container text-center my-auto">
-        <h1 className="mb-1">{config.heading}</h1>
+        <h1 className="mb-1 intro">{config.heading}</h1>
         <h3 className="mb-5">
-          <em>{config.subHeading}</em>
+          <p class="font-italic font-weight-light">{config.subHeading}</p>
         </h3>
         <Scroll type="id" element="about" offset={100}>
           <a className="btn btn-primary btn-xl" href="#about">
@@ -36,16 +36,18 @@ const IndexPage = () => (
       <div className="container text-center">
         <div className="row">
           <div className="col-lg-10 mx-auto">
-            <h2>
-              Stylish Portfolio is the perfect theme for your next project!
+            <h2 className="shadow">
+              <em className="text-fancy">I</em>n summer 2018, the scorching hot Texas heat burnt down the 
+              cabin-in-the-woods-turned-Playboy-mansion in which the founders resided. Dosey Doe is the phoenix 
+              that rose from the ashes.
+
             </h2>
             <p className="lead mb-5">
-              This theme features a flexible, UX friendly sidebar menu and stock
-              photos from our friends
+              We do cool stuff and things. 
             </p>
-            <Scroll type="id" element="services" offset={100}>
-              <a className="btn btn-dark btn-xl" href="#services">
-                What We Offer
+            <Scroll type="id" element="projects" offset={100}>
+              <a className="btn btn-dark btn-xl" href="#projects">
+                See our Projects
               </a>
             </Scroll>
           </div>
@@ -55,12 +57,12 @@ const IndexPage = () => (
 
     <section
       className="content-section bg-primary text-white text-center"
-      id="services"
+      id="projects"
     >
       <div className="container">
         <div className="content-section-heading">
-          <h3 className="text-secondary mb-0">Services</h3>
-          <h2 className="mb-5">What We Offer</h2>
+          <h3 className="text-secondary mb-0">Projects</h3>
+           <h2 className="mb-5">We tell vidid, real stories</h2>
         </div>
         <div className="row">
           <div className="col-lg-3 col-md-6 mb-5 mb-lg-0">
@@ -68,19 +70,19 @@ const IndexPage = () => (
               <i className="icon-screen-smartphone"></i>
             </span>
             <h4>
-              <strong>Responsive</strong>
+              <strong>Project 1</strong>
             </h4>
-            <p className="text-faded mb-0">Looks great on any screen size!</p>
+            <p className="text-faded mb-0">Project 1 placeholder!</p>
           </div>
           <div className="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <span className="service-icon rounded-circle mx-auto mb-3">
               <i className="icon-pencil"></i>
             </span>
             <h4>
-              <strong>Redesigned</strong>
+              <strong>Project 2</strong>
             </h4>
             <p className="text-faded mb-0">
-              Freshly redesigned for Bootstrap 4.
+              Project 2 placeholder!
             </p>
           </div>
           <div className="col-lg-3 col-md-6 mb-5 mb-md-0">
@@ -88,10 +90,10 @@ const IndexPage = () => (
               <i className="icon-like"></i>
             </span>
             <h4>
-              <strong>Favorited</strong>
+              <strong>Project 3</strong>
             </h4>
             <p className="text-faded mb-0">
-              Millions of users
+              Project 3 Placeholder!
               <i className="fas fa-heart"></i>
             </p>
           </div>
@@ -100,9 +102,9 @@ const IndexPage = () => (
               <i className="icon-mustache"></i>
             </span>
             <h4>
-              <strong>Question</strong>
+              <strong>Project 4</strong>
             </h4>
-            <p className="text-faded mb-0">I mustache you a question...</p>
+            <p className="text-faded mb-0">Project 4 placeholder! </p>
           </div>
         </div>
       </div>
@@ -110,16 +112,11 @@ const IndexPage = () => (
 
     <section className="callout">
       <div className="container text-center">
-        <h2 className="mx-auto mb-5">
-          Welcome to
-          <em>your</em>
-          next website!
-        </h2>
         <a
           className="btn btn-primary btn-xl"
-          href="https://github.com/anubhavsrivastava/gatsby-starter-stylish"
+          href="https://vimeo.com/doseydoe"
         >
-          Download Now!
+          Check us out on Vimeo
         </a>
       </div>
     </section>
@@ -190,15 +187,13 @@ const IndexPage = () => (
       </div>
     </section>
 
-    <section className="content-section bg-primary text-white">
+    <section className="content-section bg-primary text-white tilapia">
       <div className="container text-center">
-        <h2 className="mb-4">The buttons below are impossible to resist...</h2>
-        <a href="/#" className="btn btn-xl btn-light mr-4">
-          Click Me!
+        <h2 className="mb-4">Thoughts &amp; Musings</h2>
+        <a href="/#" className="btn btn-xl btn-clear-with-border">
+          Logan's Authentic, Home-Grown, non-GMO Blog
         </a>
-        <a href="/#" className="btn btn-xl btn-dark">
-          Look at Me!
-        </a>
+        
       </div>
     </section>
 

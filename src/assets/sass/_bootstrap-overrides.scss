@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
 a {
   color: $primary;
   &:hover,
@@ -7,6 +8,14 @@ a {
   }
 }
 
+body {
+  color:#7D6608;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.text-fancy {
+  font-family: cursive;
+}
 .btn-primary {
   background-color: $primary !important;
   border-color: $primary !important;
@@ -30,6 +39,17 @@ a {
     border-color: darken($secondary, 10%) !important;
   }
 }
+.btn-clear-with-border {
+  color:$white;
+  border-color: $fire !important;
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken($white,5%);
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0),$fire);
+   }
+}
+
 
 .btn-dark {
   color: $white !important;
@@ -50,4 +70,28 @@ a {
 
 .text-secondary {
   color: $secondary !important;
+}
+.tilapia {
+  background: linear-gradient(
+    fade-out($white, 0.8) 0%,
+    fade-out(yellow, 0.9) 100%
+    ),
+  url('../img/tilapia.jpg'); 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+/* The animation code */
+@keyframes intro {
+  0%   { top:50px; color: $primary; opacity: 0%;}
+  50%  { top:0px;}
+  100% { top:0px; color:default; }
+}
+
+/* The element to apply the animation to */
+h1.intro {
+  position: relative;
+  animation-name: intro;
+  animation-duration: 3s;
 }
