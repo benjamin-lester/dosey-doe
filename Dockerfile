@@ -1,19 +1,27 @@
-FROM node:alpine
+# Stage 1: Build Process
+FROM node:12-alpine AS build
 
-# Also exposing VSCode debug ports
-EXPOSE 8000 9929 9230
-
-RUN \
-  apk add --no-cache python make g++ && \
-  apk add vips-dev fftw-dev --update-cache \
-  --repository http://dl-3.alpinelinux.org/alpine/edge/community \
-  --repository http://dl-3.alpinelinux.org/alpine/edge/main \
-  && rm -fR /var/cache/apk/*
-
-RUN npm install -g gatsby-cli
+RUN apk add --no-cache --virtual .gyp python make g++
 
 WORKDIR /app
-COPY ./package.json .
-RUN yarn install && yarn cache clean
+ENV NODE_ENV=production
+
+COPY package.json yarn.lock ./
+RUN yarn --frozen-lockfile --non-interactive
+
 COPY . .
-CMD ["yarn", "develop", "-H", "0.0.0.0" ]
+RUN yarn build
+
+# Stage 2: Web Server
+FROM nginx:alpine
+
+COPY nginx /etc/nginx/
+COPY --from=build --chown=nginx:nginx /app/public /usr/share/nginx/html
+RUN touch /var/run/nginx.pid \
+    && chown nginx:nginx /var/run/nginx.pid \
+    && chown -R nginx:nginx /var/cache/nginx
+
+USER nginx
+
+EXPOSE 80
+# HEALTHCHECK CMD [ "wget", "-q", "localhost:8080" ]
