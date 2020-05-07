@@ -6,7 +6,7 @@ RUN apk add --no-cache --virtual .gyp python make g++
 WORKDIR /app
 ENV NODE_ENV=production
 
-COPY package.json yarn.lock ./
+COPY package.json ./
 RUN yarn --frozen-lockfile --non-interactive
 
 COPY . .
